@@ -7,6 +7,10 @@ class NewsChildClass extends Component {
         this.state = {}
     }
 
+    myFunc = () => {
+        alert("aaaa");
+    }
+
     render = () => {
         return (
             <>

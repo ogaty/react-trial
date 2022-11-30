@@ -9,6 +9,14 @@ class NewsClass extends Component {
             title: "aaaa",
             xxx: "YYY"
         }
+
+        this.SampleModalRef = React.createRef();
+        this.myFunc = this.myFunc.bind(this);
+
+    }
+
+    myFunc = () => {
+        this.SampleModalRef.current.myFunc();
     }
 
     myButtonClick = (event) => {
@@ -19,6 +27,7 @@ class NewsClass extends Component {
         return (
             <>
                 <button onClick={this.myButtonClick}>button</button>
+                <button onClick={this.myFunc}>child</button>
                 <div>
                     {this.state.title}
                 </div>
@@ -28,7 +37,7 @@ class NewsClass extends Component {
                 <div>
                     {this.state.xxx}
                 </div>
-                <NewsChildClass></NewsChildClass>
+                <NewsChildClass ref={this.SampleModalRef}></NewsChildClass>
             </>
         );
     }

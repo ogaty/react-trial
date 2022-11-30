@@ -9,7 +9,7 @@ import NewsFunction from "./NewsFunction";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <NewsFunction xxx={1}></NewsFunction>
+      <NewsClass xxx={1}></NewsClass>
   </React.StrictMode>
 );
 

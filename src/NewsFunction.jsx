@@ -1,17 +1,24 @@
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import NewsChildFunction from "./NewsChildFunction";
 
 const NewsFunction = (props) => {
     const [title, setTitle] = useState("aaa");
     const [xxx, setXXX] = useState("YYY");
 
+    const myRef = useRef();
+
     const myButtonClick = () => {
         setXXX("yyy");
+    }
+
+    const childButtonClick = () => {
+        myRef.current.childButtonClick();
     }
 
     return (
         <>
             <button onClick={myButtonClick}>button</button>
+            <button onClick={childButtonClick}>child</button>
             <div>
                 {title}
             </div>
@@ -21,7 +28,7 @@ const NewsFunction = (props) => {
             <div>
                 {xxx}
             </div>
-            <NewsChildFunction></NewsChildFunction>
+            <NewsChildFunction ref={myRef}></NewsChildFunction>
         </>
     )
 }
